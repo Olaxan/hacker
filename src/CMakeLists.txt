@@ -1,11 +1,14 @@
 #--------------------------------------------------------------------------
 # src 
 #--------------------------------------------------------------------------
-FILE(GLOB children RELATIVE ${CMAKE_CURRENT_LIST_DIR} ${CMAKE_CURRENT_LIST_DIR}/*)
-FOREACH(child ${children})
-	IF(IS_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/${child})
-		IF(EXISTS ${CMAKE_CURRENT_LIST_DIR}/${child}/CMakeLists.txt)
-			ADD_SUBDIRECTORY(${child})
-		ENDIF()
-	ENDIF()
-ENDFOREACH()
+
+PROJECT(Hacker)
+
+FILE(GLOB app_headers *.h)
+FILE(GLOB app_sources *cc)
+
+SET(src_files ${app_headers} ${app_sources})
+SOURCE_GROUP("app" FILES ${src_files})
+
+ADD_EXECUTABLE(app ${src_files})
+TARGET_LINK_LIBRARIES(app PUBLIC exts)
