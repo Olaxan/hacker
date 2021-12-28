@@ -4,3 +4,9 @@
 [submodule "exts/gl3w"]
 	path = exts/gl3w
 	url = https://github.com/skaslev/gl3w.git
+[submodule "exts/nanovg"]
+	path = exts/nanovg
+	url = https://github.com/memononen/nanovg.git
+[submodule "exts/imgui"]
+	path = exts/imgui
+	url = https://github.com/ocornut/imgui.git
